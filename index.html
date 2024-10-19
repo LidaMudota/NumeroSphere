@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Нумерология для осознанных решений. Личный консультант по вопросам нумерологии.">
+    <meta name="keywords" content="нумерология, консультация, числа, анализ, личный консультант">
+    <title>Нумерология – Ваш путь к осознанности</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body id="top">
+    <header class="header">
+        <div class="container header-content">
+            <div class="logo animate__animated animate__fadeInDown">
+                <a href="#top">Нумеролог</a>
+            </div>            
+            <nav>
+                <ul class="header-navigation">
+                    <li><a href="#about">Обо мне</a></li>
+                    <li><a href="#services">Услуги</a></li>
+                    <li><a href="#contacts">Контакты</a></li>
+                </ul>
+            </nav>
+            <div class="container-button">
+                <button class="contact-btn" onclick="toggleDropdown()">Связаться</button>
+
+                <div id="social-dropdown" class="social-dropdown">
+                    <a href="https://wa.me/79538978258" target="_blank">WhatsApp</a>
+                    <a href="https://t.me/s_gamauyn" target="_blank">Telegram</a>
+                    <a href="https://www.instagram.com/s.gamaiunstil_777/" target="_blank">Instagram</a>
+                    <a href="https://vk.com/s.gamayn" target="_blank">VK</a>
+                </div>                
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-overlay"></div>
+            <div class="container hero-container">
+                <h1 class="title animate__animated animate__fadeInDown">Погружение в мир нумерологии</h1>
+                <p class="description animate__animated animate__fadeInUp">Откройте тайны чисел и узнайте, как они могут повлиять на вашу жизнь</p>
+                <div class="button-group">
+                    <div class="container-button">
+                        <button onclick="openModal()">Узнать больше</button>
+
+                        <div id="modal" class="modal">
+                            <div class="modal-content">
+                                <span class="close" onclick="closeModal()">&times;</span>
+                                
+                                <h2>Дополнительная информация о нумерологии</h2>
+                                
+                                <p><strong>Нумерология — это древнее учение, основанное на силе чисел.</strong> Каждый человек рождается с уникальным набором чисел, которые могут рассказать о его характере, жизненном пути и возможностях.</p>
+                                
+                                <h3>Основные направления нумерологии:</h3>
+                                
+                                <ol>
+                                    <li>
+                                        <p><strong>Число Жизненного Пути:</strong> Это одно из ключевых чисел в нумерологии, которое рассчитывается на основе даты рождения. Оно отражает миссию человека в этой жизни и помогает понять его сильные и слабые стороны.</p>
+                                    </li>
+                                    <li>
+                                        <p><strong>Число Судьбы:</strong> Число судьбы вычисляется на основе полного имени человека при рождении. Оно указывает на главные цели и задачи, которые человек должен выполнить в течение жизни.</p>
+                                    </li>
+                                    <li>
+                                        <p><strong>Число Души:</strong> Это число раскрывает внутренние желания и стремления человека. Оно помогает понять, к чему человек стремится на глубинном уровне.</p>
+                                    </li>
+                                    <li>
+                                        <p><strong>Кармические числа:</strong> Эти числа указывают на уроки, которые человек должен усвоить в этой жизни, а также на возможные кармические задолженности из прошлых воплощений.</p>
+                                    </li>
+                                </ol>
+                                
+                                <h3>Как нумерология может помочь вам:</h3>
+                                
+                                <p><strong>Личностное развитие:</strong> Нумерология поможет вам лучше понять себя и свои внутренние стремления. Это знание может стать основой для самосовершенствования и осознанного выбора в жизни.</p>
+                                <p><strong>Принятие решений:</strong> Зная свои числа, вы сможете принимать более взвешенные и обоснованные решения, которые соответствуют вашей натуре и жизненным задачам.</p>
+                                <p><strong>Отношения и совместимость:</strong> Нумерология также помогает анализировать совместимость между людьми на основе их чисел. Это особенно полезно для улучшения личных и деловых отношений.</p>
+                                
+                                <h3>Мои услуги:</h3>
+                                
+                                <p>Я предлагаю индивидуальные консультации по нумерологии, где мы детально анализируем ваши числа и разбираем, как они влияют на разные аспекты вашей жизни — от личных отношений до профессиональной деятельности. Консультации помогут вам раскрыть ваш потенциал и двигаться в правильном направлении.</p>
+                                
+                                <p><strong>Свяжитесь со мной, чтобы узнать больше и получить персональный анализ ваших чисел.</strong></p>
+                            </div>                            
+                        </div>                        
+                    </div>
+                    <div class="container-button">
+                        <button class="button-primary" onclick="window.location.href='#services'">Мои услуги</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <section class="main-background" id="about">
+        <!-- Блок с фотографией и описанием -->
+        <div class="container flex-container">
+            <div class="image-container">
+                <img src="./images/5230975394788795803.jpg" alt="Светлана Гамаюн">
+            </div>
+            <div class="text-content">
+                <h1>Светлана Гамаюн</h1>
+                <p>Нумеролог</p>
+                <div class="experience">
+                    <span class="years">10+</span> лет опыта | <span class="consultations">10000</span> проведенных консультаций
+                </div>
+            </div>
+        </div>
+    
+        <!-- Карточки услуг -->
+        <div class="cards-section" id="services">
+            <h2>Мои услуги</h2>
+            <div class="cards-container">
+                <!-- Карточка 1 -->
+                <div class="card">
+                    <div class="card-content" style="background-image: url('./images/image\(1\).jpg');">
+                        <h3>Расчет личного числа</h3>
+                        <p>Получите персонализированный расчет вашего числа судьбы, которое помогает лучше понять ваши сильные и слабые стороны, а также выявить жизненные уроки и потенциал.</p>
+                        <a href="#">Подробнее</a>
+                    </div>
+                </div>
+                <!-- Карточка 2 -->
+                <div class="card">
+                    <div class="card-content" style="background-image: url('./images/DALL·E\ 2024-10-19\ 15.05.33\ -\ An\ abstract\ image\ with\ soft\ gradient\ shades\ of\ light\ gray\ and\ pale\ blue\,\ smoothly\ blending\ into\ each\ other\,\ but\ much\ lighter.\ Subtle\,\ barely\ noticeabl.webp');">
+                        <h3>Анализ кармических чисел</h3>
+                        <p>Кармические числа помогут вам выявить уроки из прошлых воплощений, которые необходимо усвоить, чтобы улучшить текущую жизнь.</p>
+                        <a href="#">Подробнее</a>
+                    </div>
+                </div>
+                <!-- Карточка 3 -->
+                <div class="card">
+                    <div class="card-content" style="background-image: url('./images/DALL·E\ 2024-10-19\ 15.07.44\ -\ A\ very\ light\ background\ with\ soft\,\ wavy\ lines\ in\ extremely\ pale\ pastel\ tones\ of\ blue\ and\ gray.\ The\ lines\ symbolize\ movement\ and\ life\'s\ changes\,\ sugges.webp');">
+                        <h3>Советы по улучшению жизненного пути</h3>
+                        <p>На основе ваших нумерологических данных получите советы, которые помогут вам принять важные решения и улучшить качество вашей жизни.</p>
+                        <a href="#">Подробнее</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>                                
+
+    <footer id="contacts" class="footer">
+        <div class="container">
+            <p>Свяжитесь со мной:</p>
+            <ul class="social-links">
+                <li><a href="https://wa.me/79538978258" target="_blank">WhatsApp</a></li>
+                <li><a href="https://t.me/s_gamauyn" target="_blank">Telegram</a></li>
+                <li><a href="https://www.instagram.com/s.gamaiunstil_777/" target="_blank">Instagram</a></li>
+                <li><a href="https://vk.com/s.gamayn" target="_blank">VK</a></li>
+            </ul>
+        </div>
+    </footer>        
+
+    <script src="script.js"></script>
+</body>
+</html>

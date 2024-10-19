@@ -1,0 +1,907 @@
+@font-face {
+    font-family: 'BBT';
+    src: url('./font/MarcellusSC-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'UQB';
+    src: url('./font/ukij-qara-bold.ttf') format('truetype');
+}
+
+html {
+    scroll-behavior: smooth; /* Плавная прокрутка */
+}
+
+body {
+    margin: 0;
+    font-family: 'BBT', 'UQB', sans-serif;
+    background-color: #f4f4f4;
+    animation: fadeIn 0.5s ease-in-out;
+    color: #333;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Прозрачный фон */
+    z-index: 1000;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px); /* Размытие заднего фона */
+    transition: background-color 0.3s ease;
+}
+
+.container.header-content {
+    padding: 10px 20px; /* Уменьшенные отступы */
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-navigation {
+    list-style: none;
+    display: flex;
+    gap: 100px;
+}
+
+.header-navigation li {
+    margin-right: 20px;
+}
+
+.header-navigation a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.header-navigation a:hover {
+    color: #8A2BE2;
+}
+
+.logo {
+    color: whitesmoke;
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.logo a {
+    font-size: 28px;
+    color: #fff;
+    font-family: 'Georgia', serif;
+    text-decoration: none;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.6), 0 0 20px rgba(255, 255, 255, 0.8);
+    transition: color 0.4s, text-shadow 0.4s;
+    background: linear-gradient(45deg, #8A2BE2, #03A9F4, #F441A5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.logo a:hover {
+    color: #fff;
+    text-shadow: 0 0 25px rgba(255, 255, 255, 1), 0 0 35px rgba(255, 255, 255, 1);
+    animation: magic-glow 1.5s infinite alternate;
+}
+
+@keyframes magic-glow {
+    from {
+        text-shadow: 0 0 15px rgba(255, 255, 255, 0.6), 0 0 25px rgba(255, 255, 255, 0.8);
+    }
+    to {
+        text-shadow: 0 0 25px rgba(255, 255, 255, 1), 0 0 35px rgba(255, 255, 255, 1);
+    }
+}
+
+.hero {
+    background: url('./images/image\(16\).png') no-repeat center;
+    background-size: cover;
+    position: relative;
+    color: #fff;
+    height: 750px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.title {
+    font-size: 48px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    animation: fadeInUp 0.5s ease;
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.8);
+}
+
+.description {
+    font-size: 20px;
+    margin-bottom: 40px;
+    animation: fadeInUp 0.7s ease;
+}
+
+.button-group {
+    display: flex;
+    gap: 20px;
+}
+
+/* From Uiverse.io by Spacious74 */
+button {
+  font-size: 1.4em;
+  padding: 0.6em 0.8em;
+  border-radius: 0.5em;
+  border: none;
+  background-color: #000;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 2px 2px 3px #000000b4;
+}
+
+.container-button {
+  position: relative;
+  padding: 3px;
+  background: linear-gradient(90deg, #03a9f4, #f441a5);
+  border-radius: 0.9em;
+  transition: all 0.4s ease;
+}
+
+.container-button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  border-radius: 0.9em;
+  z-index: -10;
+  filter: blur(0);
+  transition: filter 0.4s ease;
+}
+
+.container-button:hover::before {
+  background: linear-gradient(90deg, #03a9f4, #f441a5);
+  filter: blur(1.2em);
+}
+
+.container-button:active::before {
+  filter: blur(0.2em);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+input, textarea {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #E3B873;
+    font-size: 16px;
+    transition: box-shadow 0.3s ease;
+}
+
+textarea {
+    resize: none;
+    height: 150px;
+}
+
+button:hover {
+    background-color: #8A2BE2;
+    box-shadow: 0px 0px 15px rgba(195, 156, 99, 0.6);
+}
+
+.social-dropdown {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.social-dropdown a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.social-dropdown a:hover {
+    background-color: #f1f1f1;
+}
+
+.social-dropdown a:last-child {
+    border-bottom: none;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7); /* Полупрозрачный фон за модальным окном */
+}
+
+.modal-content {
+    position: relative;
+    background: url('./images/image(17).png') no-repeat center center;
+    background-size: cover;
+    color: #fff;
+    margin: 5% auto; /* Уменьшен отступ сверху, чтобы больше места было для контента */
+    padding: 20px;
+    border-radius: 10px;
+    border: none;
+    width: 80%;
+    max-width: 700px;
+    max-height: 80vh; /* Ограничение высоты до 80% высоты окна */
+    overflow-y: auto; /* Вертикальная прокрутка, если контент превышает доступное пространство */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.modal-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7); /* Затемняющий слой */
+    border-radius: 10px;
+    z-index: 1; /* Слой затемнения выше фонового изображения */
+    height: 125vh;
+}
+
+.modal-content h2, .modal-content h3, .modal-content p {
+    position: relative;
+    z-index: 2; /* Чтобы текст отображался выше затемняющего слоя */
+}
+
+.close {
+    color: #fff;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+}
+
+.close:hover,
+.close:focus {
+    color: #E3B873; /* Цвет при наведении */
+    text-decoration: none;
+}
+
+/* Секция с фоновым изображением */
+.main-background {
+    background-color: #e5eef6;
+    background: url('./images/image(18).png') no-repeat center center; /* Применение фонового изображения */
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    padding: 60px 20px;
+    min-height: 100vh;
+    z-index: 1;
+}
+
+.flex-container {
+    background: url('./images/image.jpg') no-repeat center center; /* Замените на ваш URL */
+    background-size: cover; /* Изображение растягивается, чтобы покрыть весь фон */
+    position: relative;
+    padding: 20px;
+    border-radius: 10px; /* Закругление углов */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Легкая тень для объема */
+    color: white; /* Цвет текста для контраста с изображением */
+    width: 500px;
+}
+
+.flex-container::before, 
+.flex-container::after {
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 100%;
+    top: 0;
+    background: linear-gradient(white, transparent); /* Дополнительные абстрактные линии */
+    opacity: 0.6;
+    z-index: -1;
+}
+
+.flex-container::before {
+    left: -100px;
+    transform: rotate(-45deg);
+}
+
+.flex-container::after {
+    right: -100px;
+    transform: rotate(45deg);
+}
+
+/* Стили для изображения */
+.image-container {
+    flex: 1;
+    margin-right: 30px;
+}
+
+.image-container img {
+    width: 100px; /* Уменьшаем размер изображения */
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Стили для текста */
+.text-content {
+    color: #2c2c2c;
+}
+
+.text-content h1 {
+    font-size: 24px; /* Уменьшаем размер заголовка */
+    color: #2c2c2c;
+    margin: 0;
+    font-family: 'Georgia', serif;
+}
+
+.text-content p {
+    font-size: 14px; /* Уменьшаем размер текста */
+    color: #6b6b6b;
+    margin: 10px 0;
+    font-family: 'Arial', sans-serif;
+}
+
+.experience {
+    font-size: 16px; /* Уменьшаем размер текста для опыта */
+    color: #2c2c2c;
+}
+
+.experience .years, .experience .consultations {
+    font-weight: bold;
+    font-size: 20px; /* Уменьшаем размер чисел */
+    color: #4a90e2;
+}
+
+.cards-section {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.cards-section h2 {
+    font-size: 28px;
+    color: #2c2c2c;
+    margin-bottom: 20px;
+}
+
+.cards-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+/* Магический стиль для карточек */
+.card {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.4s, box-shadow 0.4s;
+    overflow: hidden;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    position: relative;
+    width: 300px;
+    height: 350px;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.3);
+    border-image: linear-gradient(45deg, #8A2BE2, #4A90E2, #03A9F4, #F441A5) 1;
+}
+
+.card-content {
+    padding: 20px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    color: black;
+}
+
+/* Стиль заголовка в магическом стиле */
+.card-content h3 {
+    font-size: 24px;
+    color: black;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.6), 0 0 15px rgba(255, 255, 255, 0.8);
+    font-family: 'Georgia', serif;
+}
+
+/* Стиль описания */
+.card-content p {
+    font-size: 16px;
+    color: black;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Кнопка "Подробнее" в магическом стиле */
+.card-content a {
+    font-size: 18px;
+    color: #03A9F4;
+    background: linear-gradient(45deg, #8A2BE2, #4A90E2);
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    transition: background 0.4s, box-shadow 0.4s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.card-content a:hover {
+    background: linear-gradient(45deg, #F441A5, #03A9F4);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+    text-decoration: underline;
+}
+
+.footer {
+    background: black;
+    padding: 40px 20px;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+    animation: glow 3s infinite alternate; /* Анимация свечения */
+}
+
+/* Эффект свечения */
+@keyframes glow {
+    from {
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.6), 0 0 20px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 255, 255, 0.9);
+    }
+    to {
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 255, 255, 1), 0 0 40px rgba(255, 255, 255, 1);
+    }
+}
+
+/* Стили для текста */
+.footer p {
+    font-size: 18px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.6), 0 0 15px rgba(255, 255, 255, 0.8);
+    color: #fff;
+}
+
+/* Стили для социальных ссылок */
+.social-links {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-links li {
+    display: inline;
+}
+
+.social-links a {
+    font-size: 16px;
+    color: #03A9F4;
+    text-decoration: none;
+    background: black;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background 0.4s, box-shadow 0.4s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.social-links a:hover {
+    background: #333;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+    text-decoration: underline;
+}
+
+/* Элементы футера с дополнительным декором */
+.footer::before,
+.footer::after {
+    content: '';
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.5), transparent);
+    border-radius: 50%;
+    animation: shimmer 6s infinite alternate;
+    opacity: 0.7;
+}
+
+.footer::before {
+    top: -50px;
+    left: -50px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+.footer::after {
+    bottom: -50px;
+    right: -50px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+@keyframes shimmer {
+    from {
+        transform: scale(0.8);
+        opacity: 0.5;
+    }
+    to {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .modal-content {
+        width: 90%;
+    }
+}
+
+/* Медиа-запросы для мобильных устройств (ширина от 360 пикселей) */
+@media (min-width: 360px) and (max-width: 799px) {
+    body {
+        font-size: 14px; /* Уменьшение размера шрифта для лучшей читаемости на маленьких экранах */
+    }
+
+    .container {
+        max-width: 90%; /* Уменьшение ширины контейнера для мобильных устройств */
+        padding: 15px; /* Уменьшение внутреннего отступа */
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        line-height: 1.2; /* Снижение высоты строки для более компактного текста */
+    }
+
+    button {
+        font-size: 14px; /* Размер шрифта кнопок для мобильных устройств */
+        padding: 8px 12px; /* Уменьшенные отступы для кнопок */
+    }
+
+    button:hover {
+        background-color: #8A2BE2;
+        box-shadow: 0px 0px 10px rgba(195, 156, 99, 0.5); /* Уменьшение тени при наведении для мобильных устройств */
+    }
+
+    .header {
+        background-color: rgba(0, 0, 0, 0.9); /* Сделать фон чуть более непрозрачным для лучшей читаемости */
+        height: 100px;
+    }
+
+    .container.header-content {
+        padding: 5px 10px; /* Уменьшенные отступы для заголовка */
+    }
+
+    .header-navigation {
+        gap: 5px; /* Уменьшение расстояния между элементами навигации для мобильных устройств */
+        flex-direction: column; /* Вертикальное расположение элементов навигации для удобства на маленьких экранах */
+    }
+
+    .header-navigation li {
+        margin-right: 0; /* Устранение отступа справа для элементов списка */
+    }
+
+    .header-navigation a {
+        font-size: 14px; /* Уменьшение размера шрифта навигационных ссылок для мобильных устройств */
+        padding: 5px 0; /* Уменьшенные отступы для ссылок */
+    }
+
+    .logo {
+        font-size: 20px; /* Уменьшение размера логотипа для мобильных устройств */
+    }
+
+    .logo a {
+        font-size: 11px; /* Уменьшение размера ссылки логотипа */
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Уменьшение эффекта тени текста для лучшей читаемости */
+    }
+
+    .hero {
+        height: 675px; /* Уменьшение высоты для мобильных устройств */
+        background-position: center top; /* Адаптация фона для маленьких экранов */
+    }
+
+    .title {
+        font-size: 32px; /* Уменьшение размера заголовка для мобильных устройств */
+        margin-bottom: 15px; /* Уменьшение нижнего отступа для заголовка */
+    }
+
+    .description {
+        font-size: 16px; /* Уменьшение размера шрифта описания для мобильных устройств */
+        margin-bottom: 30px; /* Уменьшение нижнего отступа для описания */
+    }
+
+    .button-group {
+        gap: 10px; /* Уменьшение расстояния между кнопками */
+    }
+
+    .container-button::before {
+        filter: blur(0.5em); /* Уменьшение размытия для мобильных устройств */
+    }
+
+    .contact-form {
+        gap: 15px; /* Уменьшение расстояния между элементами формы для мобильных устройств */
+    }
+
+    .input-group {
+        flex-direction: column; /* Оставить элементы формы вертикально расположенными */
+    }
+
+    input, textarea {
+        padding: 8px; /* Уменьшение внутреннего отступа для полей ввода на мобильных устройствах */
+        font-size: 14px; /* Уменьшение размера шрифта полей ввода */
+    }
+
+    textarea {
+        height: 120px; /* Уменьшение высоты текстовой области для мобильных устройств */
+    }
+
+    .social-dropdown {
+        min-width: 150px; /* Уменьшение минимальной ширины выпадающего списка для мобильных устройств */
+    }
+
+    .modal-content {
+        width: 90%; /* Уменьшение ширины модального окна для мобильных устройств */
+        max-width: 500px; /* Максимальная ширина для мобильных устройств */
+        padding: 15px; /* Уменьшение внутреннего отступа */
+        margin-top: 100px;
+    }
+
+    .modal-content::before {
+        height: 140vh; /* Увеличение высоты затемняющего слоя для мобильных устройств */
+    }
+
+    .close {
+        font-size: 24px; /* Уменьшение размера кнопки закрытия для мобильных устройств */
+    }
+
+    .main-background {
+        padding: 40px 15px; /* Уменьшение внутреннего отступа для мобильных устройств */
+        background-position: center top; /* Адаптация фона для мобильных устройств */
+    }
+
+    .flex-container {
+        width: 90%; /* Уменьшение ширины для мобильных устройств */
+        padding: 15px; /* Уменьшение внутреннего отступа для мобильных устройств */
+    }
+
+    .flex-container::before, .flex-container::after {
+        width: 100px; /* Уменьшение ширины абстрактных линий для мобильных устройств */
+        left: -50px; /* Адаптация позиции линии для мобильных устройств */
+        right: -50px; /* Адаптация позиции линии для мобильных устройств */
+    }
+
+    .image-container {
+        margin-right: 15px; /* Уменьшение отступа для изображения на мобильных устройствах */
+    }
+
+    .image-container img {
+        width: 80px; /* Уменьшение размера изображения для мобильных устройств */
+        height: auto;
+    }
+
+    .text-content h1 {
+        font-size: 20px; /* Уменьшение размера заголовка для мобильных устройств */
+    }
+
+    .text-content p {
+        font-size: 12px; /* Уменьшение размера текста для мобильных устройств */
+        color: #6b6b6b;
+        margin: 8px 0;
+    }
+
+    .experience {
+        color: #2c2c2c;
+    }
+
+    .experience .years, .experience .consultations {
+        font-weight: bold;
+        font-size: 18px; /* Уменьшение размера чисел на мобильных устройствах */
+        color: #4a90e2;
+    }
+
+    .cards-section {
+        margin-top: 30px; /* Уменьшение отступа сверху для мобильных устройств */
+    }
+
+    .cards-section h2 {
+        font-size: 24px; /* Уменьшение размера заголовка для мобильных устройств */
+        margin-bottom: 15px; /* Уменьшение отступа снизу для заголовка */
+    }
+
+    .cards-container {
+        flex-direction: column; /* Вертикальное расположение карточек на мобильных устройствах */
+        gap: 15px; /* Уменьшение расстояния между карточками */
+    }
+
+    .card {
+        width: 100%; /* Увеличение ширины карточек для мобильных устройств */
+        height: auto; /* Автоматическая высота для лучшего размещения контента */
+    }
+
+    .footer {
+        height: 75px; /* Уменьшение высоты футера для мобильных устройств */
+        padding: 20px 10px; /* Уменьшение внутреннего отступа для мобильных устройств */
+        text-align: center; /* Центрирование текста */
+    }
+
+    .footer p {
+        font-size: 14px; /* Уменьшение размера текста для футера */
+    }
+
+    .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 10px; /* Уменьшение расстояния между ссылками */
+        flex-wrap: wrap; /* Компактное расположение ссылок */
+    }
+
+    .social-links a {
+        font-size: 14px; /* Уменьшение размера шрифта социальных ссылок */
+        padding: 5px; /* Уменьшение отступов для ссылок */
+    }
+
+    .footer::after {
+        bottom: -50px;
+        right: -50px;
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+    }
+}
+
+/* Медиа-запросы для планшетных устройств (ширина от 800 пикселей) */
+@media (min-width: 800px) and (max-width: 1199px) {
+    body {
+        font-size: 16px; /* Размер шрифта для планшетных устройств */
+    }
+
+    .container {
+        max-width: 95%; /* Увеличение ширины контейнера для планшетных устройств */
+        padding: 20px; /* Стандартные отступы для планшетов */
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        line-height: 1.4; /* Более удобная высота строки для улучшения читаемости на планшетах */
+    }
+
+    button {
+        font-size: 16px; /* Размер шрифта кнопок для планшетных устройств */
+        padding: 10px 15px; /* Умеренные отступы для кнопок */
+    }
+
+    button:hover {
+        background-color: #8A2BE2;
+        box-shadow: 0px 0px 12px rgba(195, 156, 99, 0.6); /* Увеличение тени при наведении для планшетных устройств */
+    }
+
+    .header {
+        background-color: rgba(0, 0, 0, 0.85); /* Сделать фон немного светлее для планшетов */
+    }
+
+    .header-navigation {
+        gap: 40px; /* Уменьшение расстояния между элементами навигации для планшетов */
+        flex-direction: row; /* Горизонтальное расположение элементов навигации для планшетов */
+    }
+
+    .header-navigation a {
+        font-size: 16px; /* Увеличение размера шрифта навигационных ссылок для планшетных устройств */
+    }
+
+    .logo {
+        font-size: 22px; /* Увеличение размера логотипа для планшетных устройств */
+    }
+
+    .hero {
+        height: 600px; /* Уменьшение высоты для планшетных устройств */
+    }
+
+    .title {
+        font-size: 36px; /* Увеличение размера заголовка для планшетов */
+    }
+
+    .description {
+        font-size: 18px; /* Увеличение размера шрифта описания для планшетов */
+        margin-bottom: 25px; /* Уменьшение нижнего отступа для описания */
+    }
+
+    .button-group {
+        gap: 15px; /* Увеличение расстояния между кнопками для планшетов */
+    }
+
+    .container-button {
+        padding: 3px; /* Увеличение внутреннего отступа для кнопки для планшетных устройств */
+    }
+
+    .contact-form {
+        gap: 20px; /* Увеличение расстояния между элементами формы для планшетов */
+    }
+
+    .modal-content {
+        width: 80%; /* Уменьшение ширины модального окна для планшетных устройств */
+        max-width: 600px; /* Максимальная ширина для планшетов */
+    }
+
+    .flex-container {
+        width: 80%; /* Увеличение ширины для планшетов */
+        padding: 20px; /* Увеличение внутреннего отступа для планшетов */
+    }
+
+    .image-container img {
+        width: 100px; /* Увеличение размера изображения для планшетных устройств */
+    }
+
+    .text-content h1 {
+        font-size: 28px; /* Увеличение размера заголовка для планшетов */
+    }
+
+    .text-content p {
+        font-size: 14px; /* Увеличение размера текста для планшетов */
+    }
+
+    .cards-section h2 {
+        font-size: 28px; /* Увеличение размера заголовка для планшетных устройств */
+    }
+
+    .cards-container {
+        flex-direction: row; /* Горизонтальное расположение карточек для планшетных устройств */
+        gap: 20px; /* Увеличение расстояния между карточками для планшетных устройств */
+    }
+
+    .card {
+        width: 48%; /* Уменьшение ширины карточек для планшетных устройств */
+        height: auto;
+    }
+}
+
+/* Анимация shimmer для декоративных элементов футера */
+@keyframes shimmer {
+    from {
+        transform: scale(0.8);
+        opacity: 0.5;
+    }
+    to {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+}
